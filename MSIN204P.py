@@ -249,7 +249,7 @@ print("Number of loops " + str(loopcounter) )
 weightValue = []
 timevalue = []
 loopNum = []
-for w in range(100, 8000, 150): 
+for w in range(100, 30000, 600): 
       weightValue.append(w)
       count = t.time()
       loopcounter = 0
@@ -261,18 +261,21 @@ for w in range(100, 8000, 150):
 
 
 print(weightValue);print(timevalue);print(loopNum)
-
-
+  
+plt.subplot(211)
 plt.plot(weightValue, timevalue)
-plt.axis([0, 8500, 0, 2.75 ])
+plt.axis([0, 32000, 0, 5])
 plt.ylabel('time in seconds')
 plt.xlabel('input Weight')
-plt.show()
-
+plt.grid(True)
+   
+plt.subplot(212)
 plt.plot(weightValue, loopNum)
 plt.axis([0, 8500, 0, 800000 ])
 plt.ylabel('Number of loops')
 plt.xlabel('input Weight')
+plt.grid(True)
+
 plt.show()
 
 
